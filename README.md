@@ -4,6 +4,10 @@ A small Windows tray utility that makes right-clicking the desktop and File Expl
 
 一个 Windows 托盘小工具：在 Windows 11 26H2（旧注册表方法已失效）上，让桌面和文件资源管理器的右键直接弹出 Windows 10 风格的经典完整菜单。
 
+> **兼容性 / Compatibility**
+> 支持最新的 Windows 11 26H2（已在 Build 26300.10066 上实测可用）。
+> Supports the latest Windows 11 26H2 (verified on Build 26300.10066).
+
 [中文](#中文) · [English](#english)
 
 ---
@@ -20,7 +24,7 @@ A small Windows tray utility that makes right-clicking the desktop and File Expl
 
 ### 系统要求
 
-- Windows 11 x64（在 26H2 Build 26300.10066 上测试）
+- Windows 11 x64，包含最新的 26H2（已在 Build 26300.10066 上实测可用）
 - .NET Framework 4.x（Windows 10/11 自带）
 
 ### 下载与使用
@@ -39,6 +43,8 @@ A small Windows tray utility that makes right-clicking the desktop and File Expl
 ### 工作原理
 
 Windows 11 26H2 不再响应经典的 `{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}` CLSID 覆盖和功能开关 `60813048`。
+
+因此在最新的 Windows 11 26H2 上，本程序改用下面的方式，仍然可以正常接管桌面和文件资源管理器的右键，且不需要管理员权限。
 
 本程序改为安装一个作用域受限的 `WH_MOUSE_LL` 鼠标钩子，仅在桌面（`Progman` / `WorkerW`）和文件资源管理器窗口（`CabinetWClass` / `ExploreWClass`）上，于右键按下时注入 Shift，松开后释放，使系统直接显示 Shift+右键的经典完整菜单。
 
@@ -95,7 +101,7 @@ build.bat             使用 csc.exe 构建
 
 ### Requirements
 
-- Windows 11 x64 (tested on 26H2 Build 26300.10066)
+- Windows 11 x64, including the latest 26H2 (verified on Build 26300.10066)
 - .NET Framework 4.x (included with Windows 10/11)
 
 ### Download and usage
@@ -117,6 +123,8 @@ The tray UI is currently in Chinese.
 ### How it works
 
 Windows 11 26H2 ignores the classic `{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}` CLSID override and the `60813048` feature switch.
+
+As a result, on the latest Windows 11 26H2 the app uses the approach below to keep the classic menu working on the desktop and in File Explorer, without administrator rights or system file changes.
 
 This app installs a scoped low-level mouse hook (`WH_MOUSE_LL`). Only when right-clicking the desktop (`Progman` / `WorkerW`) or File Explorer windows (`CabinetWClass` / `ExploreWClass`), it injects Shift on right-button down and releases it afterwards, so Windows opens the classic Shift+right-click menu directly.
 
