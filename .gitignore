@@ -1,0 +1,15 @@
+# Build output
+dist/
+
+# Local diagnostics and screenshots
+*.ps1
+*.png
+*.txt
+
+# IDE files
+.vs/
+*.user
+*.suo
+
+# Binaries
+*.exe
