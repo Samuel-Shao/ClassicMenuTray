@@ -25,7 +25,7 @@ A small Windows tray utility that makes right-clicking the desktop and File Expl
 
 ### 下载与使用
 
-1. 在本仓库的 **Releases** 页面下载 `ClassicMenuTray.exe`。
+1. 在本仓库的 [Releases](https://github.com/Samuel-Shao/ClassicMenuTray/releases) 页面下载 `ClassicMenuTray.exe`。
 2. 双击运行。托盘出现图标后，桌面和文件资源管理器右键会直接显示经典菜单。
 3. 托盘菜单说明：
    - `状态：...`：当前右键模式
@@ -100,7 +100,7 @@ build.bat             使用 csc.exe 构建
 
 ### Download and usage
 
-1. Download `ClassicMenuTray.exe` from the **Releases** page of this repository.
+1. Download `ClassicMenuTray.exe` from the [Releases](https://github.com/Samuel-Shao/ClassicMenuTray/releases) page.
 2. Run it. A tray icon appears; right-clicking the desktop and File Explorer now shows the classic menu.
 3. Tray menu:
    - `状态：...` — current right-click mode
